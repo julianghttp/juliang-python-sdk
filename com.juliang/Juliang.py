@@ -113,13 +113,3 @@ def alone_get_white_ip(ip: AloneGetWhiteIp) -> str:
     result = unquote(request.read(), "utf-8")
     return result
 
-
-def main():
-    m = DynamicGetIps("0794d170bdc14b3f835a2202bb21cbcd", "1135123858735679", "10")
-    m.pt = "1"
-    m.result_type = "json"
-    dynamic_get_ips(m)
-
-
-if __name__ == "__main__":
-    main()
