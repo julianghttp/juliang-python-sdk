@@ -1,15 +1,15 @@
-from common.DynamicGetIps import DynamicGetIps
-from common.DynamicCheck import DynamicCheck
-from common.DynamicSetWhiteIp import DynamicSetWhiteIp
-from common.DynamicGetWhiteIp import DynamicGetWhiteIp
-from common.DynamicRemain import DynamicRemain
-from common.DynamicBalance import DynamicBalance
-from common.UsersGetBalance import UsersGetBalance
-from common.AloneGetIps import AloneGetIps
-from common.AloneSetWhiteIp import AloneSetWhiteIp
-from common.AloneGetWhiteIp import AloneGetWhiteIp
-from enums.URL import URL
-from ext.StrKit import get_params
+from .common.DynamicGetIps import DynamicGetIps
+from .common.DynamicCheck import DynamicCheck
+from .common.DynamicSetWhiteIp import DynamicSetWhiteIp
+from .common.DynamicGetWhiteIp import DynamicGetWhiteIp
+from .common.DynamicRemain import DynamicRemain
+from .common.DynamicBalance import DynamicBalance
+from .common.UsersGetBalance import UsersGetBalance
+from .common.AloneGetIps import AloneGetIps
+from .common.AloneSetWhiteIp import AloneSetWhiteIp
+from .common.AloneGetWhiteIp import AloneGetWhiteIp
+from .enums.URL import URL
+from .ext.StrKit import get_params
 import urllib.request
 from urllib.parse import unquote
 
