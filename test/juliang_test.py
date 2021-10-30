@@ -10,6 +10,8 @@ import common.UsersGetBalance as ugb
 import common.AloneGetIps as agi
 import common.AloneSetWhiteIp as aswi
 import common.AloneGetWhiteIp as agwi
+import common.DynamicReplaceWhiteIp as drwi
+import common.AloneReplaceWhiteIp as arwi
 
 dynamic_trade_no = "11351242352345234523453465735679"
 dynamic_key = "0794dsfdsgsdgw3tg45t324502bb21cbcd"
@@ -50,6 +52,14 @@ class MyTestCase(unittest.TestCase):
         value = Juliang.dynamic_get_white_ip(m)
         print(value)
 
+    # 动态代理 -- 修改IP白名单
+    def test_dynamic_replace_white_ip(self):
+        m = drwi.DynamicReplaceWhiteIp(dynamic_key, dynamic_trade_no)
+        m.old_ip = "1.1.1.1"
+        m.new_ip = "3.3.3.3"
+        value = Juliang.dynamic_replace_white_ip(m)
+        print(value)
+
     # 动态代理 -- 获取代理剩余可用时长
     def test_dynamic_remain(self):
         m = dr.DynamicRemain(dynamic_key, dynamic_trade_no)
@@ -73,6 +83,14 @@ class MyTestCase(unittest.TestCase):
     def test_alone_get_ips(self):
         m = agi.AloneGetIps(alone_key, alone_trade_no)
         value = Juliang.alone_get_ips(m)
+        print(value)
+
+    # 独享代理 -- 替换IP白名单
+    def test_alone_replace_white_ip(self):
+        m = arwi.AloneReplaceWhiteIp(alone_key, alone_trade_no)
+        m.old_ip = "1.1.1.1"
+        m.new_ip = "2.2.2.2"
+        value = Juliang.alone_replace_white_ip(m)
         print(value)
 
     # 独享代理 -- 设置代理IP白名单

@@ -4,10 +4,12 @@ from .common.DynamicSetWhiteIp import DynamicSetWhiteIp
 from .common.DynamicGetWhiteIp import DynamicGetWhiteIp
 from .common.DynamicRemain import DynamicRemain
 from .common.DynamicBalance import DynamicBalance
+from .common.DynamicReplaceWhiteIp import DynamicReplaceWhiteIp
 from .common.UsersGetBalance import UsersGetBalance
 from .common.AloneGetIps import AloneGetIps
 from .common.AloneSetWhiteIp import AloneSetWhiteIp
 from .common.AloneGetWhiteIp import AloneGetWhiteIp
+from .common.AloneReplaceWhiteIp import AloneReplaceWhiteIp
 from .enums.URL import URL
 from .ext.StrKit import get_params
 import urllib.request
@@ -40,6 +42,15 @@ def dynamic_set_white_ip(ip: DynamicSetWhiteIp) -> str:
     appkey = dic.get("key")
     params = get_params(dic, appkey)
     request = urllib.request.urlopen(URL.DYNAMIC_SETWHITEIP.value + params)
+    result = unquote(request.read(), "utf-8")
+    return result
+
+# 动态代理 -- 替换IP白名单
+def dynamic_replace_white_ip(ip: DynamicReplaceWhiteIp) -> str:
+    dic = ip.__dict__
+    appkey = dic.get("key")
+    params = get_params(dic, appkey)
+    request = urllib.request.urlopen(URL.DYNAMIC_REPLACEWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
 
@@ -102,6 +113,16 @@ def alone_set_white_ip(ip: AloneSetWhiteIp) -> str:
     request = urllib.request.urlopen(URL.ALONE_SETWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
+
+# 独享代理 -- 替换IP白名单
+def alone_replace_white_ip(ip: AloneReplaceWhiteIp) -> str:
+    dic = ip.__dict__
+    appkey = dic.get("key")
+    params = get_params(dic, appkey)
+    request = urllib.request.urlopen(URL.ALONE_REPLACEWHITEIP.value + params)
+    result = unquote(request.read(), "utf-8")
+    return result
+
 
 
 # 独享代理 -- 获取代理IP白名单
