@@ -10,6 +10,7 @@ from .common.AloneGetIps import AloneGetIps
 from .common.AloneSetWhiteIp import AloneSetWhiteIp
 from .common.AloneGetWhiteIp import AloneGetWhiteIp
 from .common.AloneReplaceWhiteIp import AloneReplaceWhiteIp
+from .common.UsersGetAllOrders import UsersGetAllOrders
 from .enums.URL import URL
 from .ext.StrKit import get_params
 import urllib.request
@@ -84,6 +85,13 @@ def dynamic_balance(balance: DynamicBalance) -> str:
     result = unquote(request.read(), "utf-8")
     return result
 
+def users_get_allOrders(allorders: UsersGetAllOrders) -> str:
+    dic = allorders.__dict__
+    appkey = dic.get("key")
+    params = get_params(dic,appkey)
+    request = urllib.request.urlopen(URL.USERS_GETALLORDERS.value + params)
+    result = unquote(request.read(), "utf-8")
+    return result
 
 # 获取账户余额
 def users_get_balance(balance: UsersGetBalance) -> str:
