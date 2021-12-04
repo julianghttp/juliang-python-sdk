@@ -23,6 +23,8 @@ pip install juliang
 python setup.py install
 ```
 
+> Python 3.9以下的需要将 源码文件Juliang.py中的unquote(request.read(), "utf-8")方法替换为unquote(request.read().decode(), "utf-8")
+
 ## 示例
 ```python
 import juliangip.Juliang as Juliang
