@@ -22,6 +22,7 @@ def dynamic_get_ips(getips: DynamicGetIps) -> str:
     dic = getips.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params,"?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_GETIPS.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -32,6 +33,7 @@ def dynamic_check(check: DynamicCheck) -> str:
     dic = check.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_CHECK.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -42,6 +44,7 @@ def dynamic_set_white_ip(ip: DynamicSetWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_SETWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -51,6 +54,7 @@ def dynamic_replace_white_ip(ip: DynamicReplaceWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_REPLACEWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -61,6 +65,7 @@ def dynamic_get_white_ip(ip: DynamicGetWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_GETWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -71,6 +76,7 @@ def dynamic_remain(remain: DynamicRemain) -> str:
     dic = remain.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_REMAIN.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -81,6 +87,7 @@ def dynamic_balance(balance: DynamicBalance) -> str:
     dic = balance.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.DYNAMIC_BALANCE.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -89,6 +96,7 @@ def users_get_allOrders(allorders: UsersGetAllOrders) -> str:
     dic = allorders.__dict__
     appkey = dic.get("key")
     params = get_params(dic,appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.USERS_GETALLORDERS.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -98,6 +106,7 @@ def users_get_balance(balance: UsersGetBalance) -> str:
     dic = balance.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.USERS_GETBALANCE.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -108,6 +117,7 @@ def alone_get_ips(ips: AloneGetIps) -> str:
     dic = ips.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.ALONE_GETIPS.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -118,6 +128,7 @@ def alone_set_white_ip(ip: AloneSetWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.ALONE_SETWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -127,6 +138,7 @@ def alone_replace_white_ip(ip: AloneReplaceWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.ALONE_REPLACEWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result
@@ -138,6 +150,7 @@ def alone_get_white_ip(ip: AloneGetWhiteIp) -> str:
     dic = ip.__dict__
     appkey = dic.get("key")
     params = get_params(dic, appkey)
+    params = urllib.parse.quote(params, "?/&=")
     request = urllib.request.urlopen(URL.ALONE_GETWHITEIP.value + params)
     result = unquote(request.read(), "utf-8")
     return result

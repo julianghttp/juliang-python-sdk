@@ -5,7 +5,7 @@ from enum import Enum, unique
 class URL(Enum):
     # 主站地址
     DOMAIN = "https://v1.api.juliangip.com"
-    # DOMAIN = "http://192.168.10.52:8087"
+    # DOMAIN = "http://9e84xw.natappfree.cc"
     # 获取账户余额
     USERS_GETBALANCE = DOMAIN + "/users/getbalance"
     # 获取账户下对应类型的所有正常状态订单

@@ -1,20 +1,23 @@
 import unittest
-import Juliang
-import common.DynamicGetIps as dgi
-import common.DynamicCheck as check
-import common.DynamicSetWhiteIp as dswi
-import common.DynamicGetWhiteIp as dgwi
-import common.DynamicRemain as dr
-import common.DynamicBalance as db
-import common.UsersGetBalance as ugb
-import common.AloneGetIps as agi
-import common.AloneSetWhiteIp as aswi
-import common.AloneGetWhiteIp as agwi
-import common.DynamicReplaceWhiteIp as drwi
-import common.AloneReplaceWhiteIp as arwi
 
-dynamic_trade_no = "11351242352345234523453465735679"
-dynamic_key = "0794dsfdsgsdgw3tg45t324502bb21cbcd"
+from src.juliangip import Juliang
+from src.juliangip.common import (
+    DynamicGetIps as dgi,
+    DynamicCheck as check,
+    DynamicSetWhiteIp as dswi,
+    DynamicGetWhiteIp as dgwi,
+    DynamicReplaceWhiteIp as drwi,
+    DynamicRemain as dr,
+    DynamicBalance as db,
+    UsersGetBalance as ugb,
+    AloneGetIps as agi,
+    AloneReplaceWhiteIp as arwi,
+    AloneSetWhiteIp as aswi,
+    AloneGetWhiteIp as agwi
+)
+
+dynamic_trade_no = "135824523452345020"
+dynamic_key = "63dc5565134513462456345690e6f3f6f17a2883"
 
 user_id = "1215104"
 key = "514a5dfgsdgshwry45gergwerg2817a866328c"
@@ -28,6 +31,7 @@ class MyTestCase(unittest.TestCase):
     def test_dynamic_get_ips(self):
         m = dgi.DynamicGetIps(dynamic_key, dynamic_trade_no, "10")
         m.pt = "1"
+        m.no_area = "三明"
         m.result_type = "json"
         value = Juliang.dynamic_get_ips(m)
         print(value)
