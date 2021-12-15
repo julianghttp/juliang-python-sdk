@@ -18,7 +18,7 @@ URL = 'https://gitee.com/juliangip/juliang-python-sdk'
 EMAIL = 'juliangip@163.com'
 AUTHOR = 'juliangip'
 REQUIRES_PYTHON = '>=3.9.0'
-VERSION = '0.1.10'
+VERSION = '0.1.11'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
