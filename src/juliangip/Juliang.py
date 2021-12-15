@@ -11,6 +11,7 @@ from .common.AloneSetWhiteIp import AloneSetWhiteIp
 from .common.AloneGetWhiteIp import AloneGetWhiteIp
 from .common.AloneReplaceWhiteIp import AloneReplaceWhiteIp
 from .common.UsersGetAllOrders import UsersGetAllOrders
+from .common.UsersGetCity import UsersGetCity
 from .enums.URL import URL
 from .ext.StrKit import get_params
 import urllib.request
@@ -92,6 +93,7 @@ def dynamic_balance(balance: DynamicBalance) -> str:
     result = unquote(request.read(), "utf-8")
     return result
 
+#获取对应产品类型正常状态订单信息
 def users_get_allOrders(allorders: UsersGetAllOrders) -> str:
     dic = allorders.__dict__
     appkey = dic.get("key")
@@ -100,6 +102,17 @@ def users_get_allOrders(allorders: UsersGetAllOrders) -> str:
     request = urllib.request.urlopen(URL.USERS_GETALLORDERS.value + params)
     result = unquote(request.read(), "utf-8")
     return result
+
+#获取所属省份可用代理城市信息
+def user_get_city(cityRequest: UsersGetCity) -> str:
+    dic = cityRequest.__dict__
+    appKey = dic.get("key")
+    params = get_params(dic, appKey)
+    params = urllib.parse.quote(params, "?/&=")
+    request = urllib.request.urlopen(URL.USERS_GETCITY.value + params)
+    result = unquote(request.read(), "utf-8")
+    return result
+
 
 # 获取账户余额
 def users_get_balance(balance: UsersGetBalance) -> str:

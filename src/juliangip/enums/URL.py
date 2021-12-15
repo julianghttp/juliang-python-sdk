@@ -4,12 +4,14 @@ from enum import Enum, unique
 @unique
 class URL(Enum):
     # 主站地址
-    DOMAIN = "https://v1.api.juliangip.com"
-    # DOMAIN = "http://9e84xw.natappfree.cc"
+    # DOMAIN = "https://v1.api.juliangip.com"
+    DOMAIN = "http://192.168.10.63:8087"
     # 获取账户余额
     USERS_GETBALANCE = DOMAIN + "/users/getbalance"
-    # 获取账户下对应类型的所有正常状态订单
+    # 获取账户下对应类型的所有正常状态订单信息
     USERS_GETALLORDERS = DOMAIN + "/users/getAllOrders"
+    # 获取所属省份可用代理城市信息
+    USERS_GETCITY = DOMAIN + "/users/getCity"
     # 动态代理 - - 提取动态代理
     DYNAMIC_GETIPS = DOMAIN + "/dynamic/getips"
     # 动态代理 - - 校验IP可用性

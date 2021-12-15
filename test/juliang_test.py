@@ -10,6 +10,8 @@ from src.juliangip.common import (
     DynamicRemain as dr,
     DynamicBalance as db,
     UsersGetBalance as ugb,
+    UsersGetAllOrders as ugao,
+    UsersGetCity as ugc,
     AloneGetIps as agi,
     AloneReplaceWhiteIp as arwi,
     AloneSetWhiteIp as aswi,
@@ -81,6 +83,21 @@ class MyTestCase(unittest.TestCase):
     def test_users_get_balance(self):
         m = ugb.UsersGetBalance(key, user_id)
         value = Juliang.users_get_balance(m)
+        print(value)
+
+    # 获取账户下对应产品类型正常状态订单信息
+    def test_users_get_all_orders(self):
+        m = ugao.UsersGetAllOrders(key,user_id)
+        m.product_type = "1"
+        m.show = "1"
+        value = Juliang.users_get_allOrders(m)
+        print(value)
+
+    #查询对应省份可用代理城市信息
+    def test_users_get_city(self):
+        m = ugc.UsersGetCity(key,user_id)
+        m.province = "湖北,河北,山东"
+        value = Juliang.user_get_city(m)
         print(value)
 
     # 独享代理 -- 获取代理详情[异常]
